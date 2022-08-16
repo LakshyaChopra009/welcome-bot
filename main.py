@@ -1,21 +1,34 @@
-import discord
+import os
+from keep_alive import keep_alive
 from discord.ext import commands
-import random
+import discord
 
-client = commands.Bot(command_prefix = '.')
+intents = discord.Intents.default()
+intents.members = True
 
-@client.event
-async def on_ready():
-    print("I am Alive")
+bot = commands.Bot(
+    command_prefix="!",  # Change to desired prefix
+    case_insensitive=True,
+    intents=intents# Commands aren't case-sensitive
+)
 
-async def on_member_join(member):
-    channel = client.get_channel(985583159586459708)
-    em = embed=discord.Embed(title="title", description="description", color=0xff0000)
-    embed.set_author(name="name", url="url", icon_url="icon")
-    embed.set_thumbnail(url="thumbnail")
-    embed.add_field(name="field", value="value", inline=False)
-    embed.set_footer(text=f"You are our {len(member.guild.members)}member")
-    await channel.send(f"Heya {member.mention}🌙", embed=em)
+bot.author_id = 861939702756409344  # Change to your discord id!!!
 
 
-client.run('client id')
+@bot.event
+async def on_ready():  # When the bot is ready
+    print("I'm in")
+    print(bot.user)  # Prints the bot's username and identifier
+
+
+extensions = [
+    'cogs.welcome'  # Same name as it would be if you were importing it
+]
+
+if __name__ == '__main__':  # Ensures this is the file being ran
+    for extension in extensions:
+        bot.load_extension(extension)  # Loades every extension.
+
+keep_alive()  # Starts a webserver to be pinged.
+token = os.environ.get("Auth_Token")
+bot.run(token)  # Starts the bot
