@@ -29,6 +29,5 @@ if __name__ == '__main__':  # Ensures this is the file being ran
     for extension in extensions:
         bot.load_extension(extension)  # Loades every extension.
 
-keep_alive()  # Starts a webserver to be pinged.
 token = os.environ["Auth_Token"]
 bot.run(token)  # Starts the bot
