@@ -12,7 +12,7 @@ bot = commands.Bot(
     intents=intents# Commands aren't case-sensitive
 )
 
-bot.author_id = 861939702756409344  # Change to your discord id!!!
+bot.author_id = 861939702756409344,982232494223020042  # Change to your discord id!!!
 
 
 @bot.event
