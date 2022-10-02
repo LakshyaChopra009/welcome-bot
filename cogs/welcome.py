@@ -2,7 +2,6 @@ from sqlite3 import Timestamp
 import discord
 from discord.ext import commands
 import datetime
-import asyncio 
 
 class WelcomeModule(commands.Cog, name='Developer Commands'):
     '''These are the developer commands'''
@@ -23,8 +22,6 @@ class WelcomeModule(commands.Cog, name='Developer Commands'):
         embed.set_image(url="https://media.discordapp.net/attachments/985926436760191106/997092526928437258/welcome_banner_2.gif")
         embed.set_footer(text=f"You are our {member.guild.member_count} member",icon_url=member.guild.icon_url)
         await channel.send(f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {member.mention} <a:tsc_thanks:986312698398650450>", embed=em)
-        await asyncio.sleep(20) # waiting 20 seconds
-        await msg.delete() # Deleting msg
         for i in Family_Role: 
             await member.add_roles(member.guild.get_role(i))
 
