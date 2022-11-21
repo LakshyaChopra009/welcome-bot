@@ -28,12 +28,12 @@ class WelcomeModule(commands.Cog, name='Developer Commands'):
     @commands.command()
     async def testgreet(self,ctx):
         channel = self.bot.get_channel(1043446531421917194)
-        em = embed=discord.Embed(description="""𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐍ι𝐠нτ 𝐒ταℓκєяѕ<:tsc_smileykiss:986312710541168700>\n \n<a:tsc_love:997038267096649808> ʙᴇ ꜱᴜʀᴇ ᴛᴏ ᴄʜᴇᴄᴋ ᴏᴜᴛ\n<a:arrow_blue:997038188931596338> <#985583140758249472>\n<a:arrow_blue:997038188931596338> <#985583142859571250>\n<a:AUIHug:997529641575251988> ʜᴏᴘᴇ ʏᴏᴜ ᴇɴᴊᴏʏ ꜱᴛᴀʏɪɴɢ ʜᴇʀᴇ <a:tsc_heartlike:997515597619409037>""",timestamp=datetime.datetime.utcnow(), color=0x7105D0)
+        em = embed=discord.Embed(description="""𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐍ι𝐠нτ 𝐒ταℓκєяѕ<:tsc_smileykiss:986312710541168700>\n \n<a:tsc_love:997038267096649808> ʙᴇ ꜱᴜʀᴇ ᴛᴏ ᴄʜᴇᴄᴋ ᴏᴜᴛ\n<a:arrow_blue:997038188931596338> <#1043481661280620574>\n<a:arrow_blue:997038188931596338> <#1043481658382368819>\n<a:AUIHug:997529641575251988> ʜᴏᴘᴇ ʏᴏᴜ ᴇɴᴊᴏʏ ꜱᴛᴀʏɪɴɢ ʜᴇʀᴇ <a:tsc_heartlike:997515597619409037>""",timestamp=datetime.datetime.utcnow(), color=0x7105D0)
         em.set_thumbnail(url="https://media.discordapp.net/attachments/1021751484112703509/1025104623381516358/dilliwali-namaste-ji.gif")
-        embed.set_author(name=f"{ctx.author.name}", icon_url=f"{ctx.author.avatar_url}")
+        embed.set_author(name=f"{member.name}", icon_url=f"{member.avatar_url}")
         embed.set_image(url="https://media.discordapp.net/attachments/985926436760191106/997092526928437258/welcome_banner_2.gif")
-        embed.set_footer(text=f"You are our {ctx.author.guild.member_count} member",icon_url=ctx.author.guild.icon_url)
-        await channel.send(f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {ctx.author.mention} <a:tsc_thanks:986312698398650450>", embed=em)
+        embed.set_footer(text=f"You are our {member.guild.member_count} member",icon_url=member.guild.icon_url)
+        await channel.send(f"𝐖𝐞𝐥𝐜𝐨𝐦𝐞 {member.mention} <a:tsc_thanks:986312698398650450>", embed=em)
         await channel.send("``` Please Note Bot will not add any family role while using testgreet command ```")
 def setup(bot):
     bot.add_cog(WelcomeModule(bot))
