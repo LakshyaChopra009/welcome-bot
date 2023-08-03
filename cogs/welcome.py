@@ -37,4 +37,3 @@ class WelcomeModule(commands.Cog, name='Developer Commands'):
         await channel.send("``` Please Note Bot will not add any family role while using testgreet command ```")
 def setup(bot):
     bot.add_cog(WelcomeModule(bot))
- b
