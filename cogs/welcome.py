@@ -25,7 +25,7 @@ class WelcomeModule(commands.Cog, name='Developer Commands'):
         for i in Family_Role: 
             await member.add_roles(member.guild.get_role(i))
 
-     @commands.command()
+    @commands.command()
     async def testgreet(self,ctx):
         channel = self.bot.get_channel(1043446531421917194)
         em = embed=discord.Embed(description="""𝐖𝐞𝐥𝐜𝐨𝐦𝐞 𝐭𝐨 𝐍ι𝐠нτ 𝐒ταℓκєяѕ<:tsc_smileykiss:986312710541168700>\n \n<a:tsc_love:997038267096649808> ʙᴇ ꜱᴜʀᴇ ᴛᴏ ᴄʜᴇᴄᴋ ᴏᴜᴛ\n<a:arrow_blue:997038188931596338> <#1043481661280620574>\n<a:arrow_blue:997038188931596338> <#1043481658382368819>\n<a:AUIHug:997529641575251988> ʜᴏᴘᴇ ʏᴏᴜ ᴇɴᴊᴏʏ ꜱᴛᴀʏɪɴɢ ʜᴇʀᴇ <a:tsc_heartlike:997515597619409037>""",timestamp=datetime.datetime.utcnow(), color=0x7105D0)
