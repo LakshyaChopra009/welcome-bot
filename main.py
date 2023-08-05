@@ -17,7 +17,7 @@ bot.author_id = 861939702756409344,982232494223020042  # Change to your discord 
 
 @bot.event
 async def on_ready():  # When the bot is ready
-    await bot.change_presence(status=discord.Status.dnd,activity=discord.Activity(type=discord.ActivityType.listening, name="discord.gg/gupshup"))
+    await bot.change_presence(status=discord.Status.do_not_disturb, activity=discord.Activity(type=discord.ActivityType.listening, name="discord.gg/gupshup"))
     print("I'm in")
     print(bot.user)  # Prints the bot's username and identifier
 
